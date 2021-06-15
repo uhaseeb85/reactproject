@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './Login.css';
 import PropTypes from 'prop-types';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import '../Footer/Footer.css';
 
 /**
  * 
@@ -41,7 +44,8 @@ export default function Login({ setToken }) {
 
   return(
     <div className="login-wrapper">
-    <h1>Please Log In</h1>
+    <Header />
+    <h4>Please Log In</h4>
     <form onSubmit={handleSubmit}>
       <label>
         <p>Username</p>
@@ -55,6 +59,7 @@ export default function Login({ setToken }) {
         <button type="submit">Submit</button>
       </div>
     </form>
+    <Footer />
     </div>
   )
 }

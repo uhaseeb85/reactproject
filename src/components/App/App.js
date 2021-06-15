@@ -1,10 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.css';
-import Dashboard from '../Dashboard/Dashboard';
 import Login from '../Login/Login';
-import Preferences from '../Preferences/Preferences';
 import useToken from './useToken';
+import Header from '../Header/Header';
+import RegistrationForm from '../RegistrationForm/RegistrationForm';
 
 function App() {
 
@@ -16,14 +15,12 @@ function App() {
 
   return (
     <div className="wrapper">
-      <h1>Application</h1>
+      <Header />
+      <h4>Enter the Details</h4>
       <BrowserRouter>
         <Switch>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/preferences">
-            <Preferences />
+          <Route path="/">
+            <RegistrationForm />
           </Route>
         </Switch>
       </BrowserRouter>
