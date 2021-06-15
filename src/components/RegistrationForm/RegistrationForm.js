@@ -2,12 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { useFormik } from "formik";
 import "./RegistrationForm.css";
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 
 const RegistrationForm = () => {
   const formik = useFormik({
-    initialValues: { email: "" },
+    initialValues: { email: "", clientname:"",scope:"",clientcontact:"",clientorg:"",redirecturl:""},
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
     }
