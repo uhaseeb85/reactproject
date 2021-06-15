@@ -89,7 +89,7 @@ const Dashboard = () => (
   <div style={styles.container}>
 
     <CRUDTable
-      caption="Tasks"
+      caption="Clients"
       fetchItems={payload => service.fetchItems(payload)}
     >
       <Fields>
@@ -104,19 +104,19 @@ const Dashboard = () => (
 
 
       <CreateForm
-        title="Task Creation"
+        title="Client Creation"
         message="Create a new client"
-        trigger="Create Task"
+        trigger="Create Client"
         onSubmit={task => service.create(task)}
         submitText="Create"
         validate={values => {
           const errors = {};
           if (!values.title) {
-            errors.title = "Please, provide task's title";
+            errors.title = "Please, provide Client name";
           }
 
           if (!values.description) {
-            errors.description = "Please, provide task's description";
+            errors.description = "Please, provide client description";
           }
 
           return errors;
@@ -124,8 +124,8 @@ const Dashboard = () => (
       />
 
       <UpdateForm
-        title="Task Update Process"
-        message="Update task"
+        title="Client Update Process"
+        message="Update client"
         trigger="Update"
         onSubmit={task => service.update(task)}
         submitText="Update"
@@ -137,11 +137,11 @@ const Dashboard = () => (
           }
 
           if (!values.title) {
-            errors.title = "Please, provide task's title";
+            errors.title = "Please, provide client title";
           }
 
           if (!values.description) {
-            errors.description = "Please, provide task's description";
+            errors.description = "Please, provide client description";
           }
 
           return errors;
@@ -149,8 +149,8 @@ const Dashboard = () => (
       />
 
       <DeleteForm
-        title="Task Delete Process"
-        message="Are you sure you want to delete the task?"
+        title="Client Delete Process"
+        message="Are you sure you want to delete the client?"
         trigger="Delete"
         onSubmit={task => service.delete(task)}
         submitText="Delete"
