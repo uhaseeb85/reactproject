@@ -13,12 +13,8 @@ import '../Footer/Footer.css';
  * @returns token
  */
 async function loginUser(credentials) {
-  return fetch('http://localhost:8080/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(credentials)
+  return fetch('https://oauth-server-911.herokuapp.com/login', {
+    method: 'GET'
   })
     .then(data => data.json())
  }
